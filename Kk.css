@@ -1,0 +1,62 @@
+#hjl {
+  border: 5px solid #EADDCA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 15px;
+  width: fit-content;
+  margin: 20px auto;
+  border-radius: 33px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#tn{
+  display:flex;
+   justify-content:space-between;
+   width:100%;
+}
+#submit{
+  border: 2px solid gray;
+  border-radius:15px;
+  border-color:#32a89b;
+}
+#reset{
+  border: 2px solid gray;
+  border-radius:15px;
+  border-color:#32a89b;
+}
+body{
+  background-color: #32a89b;
+}
+
+#hjl{
+  background-color: #d9a96a;
+}
+#submit{
+  color:#8B4513;
+}
+#reset{
+  color:#8B4513;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;      /* هذا السطر ضروري جداً ليعرف المتصفح طول الصفحة */
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start ; /* يوسطه عمودياً */
+  align-items: center;    /* يوسطه أفقياً */
+  background-color: #32a89b;
+  padding-top:125px;
+}
+#email{
+  padding-left:33px;
+}
+#login{
+  border:5px solid #EADDCA;
+  padding:10px;
+  border-radius:33px;
+}
